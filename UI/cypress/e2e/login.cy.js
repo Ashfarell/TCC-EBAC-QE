@@ -1,20 +1,21 @@
+import LoginPage from '../pages/LoginPage';
+
 describe('Login', () => {
   it('deve realizar login com sucesso', () => {
-    // 1. Acessar site
-    cy.visit('http://lojaebac.ebaconline.art.br/');
+    LoginPage.abrirLogin();
+    LoginPage.preencherUsuario('usuario_valido');
+    LoginPage.preencherSenha('senha_valida');
+    LoginPage.clicarLogin();
 
-    // 2. Clicar em Login
-    cy.get('.icon-user-unfollow').click();
+    LoginPage.mensagemSucesso().should('be.visible').and('contain.text', 'Minha conta');
+  });
 
-    // 3. Preencher usuário
-    cy.get('#username').type('usuario_valido');
+  it('deve exibir erro ao tentar login inválido', () => {
+    LoginPage.abrirLogin();
+    LoginPage.preencherUsuario('usuario_invalido');
+    LoginPage.preencherSenha('senha_errada');
+    LoginPage.clicarLogin();
 
-    // 4. Preencher senha
-    cy.get('#password').type('senha_valida');
-
-    // 5. Clicar em entrar
-    cy.get('[name="login"]').click();
-
-    cy.get('.page-title').should('be.visible').and('contain.text', 'Minha conta');
+    LoginPage.mensagemErro().should('be.visible');
   });
 });
