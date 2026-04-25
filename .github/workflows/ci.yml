@@ -25,4 +25,4 @@ jobs:
 
       - name: Run Cypress tests
         working-directory: UI
-        run: npx cypress run --spec "cypress/e2e/**/*.cy.js"
+        run: npx cypress run
