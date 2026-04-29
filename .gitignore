@@ -1,19 +1,57 @@
-# Node modules
+# =====================
+# Node.js
+# =====================
 node_modules/
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
 
-# Cypress cache
+# =====================
+# Appium / Mobile Testing
+# =====================
+*.apk
+*.ipa
+*.app
+
+# Appium logs
+appium.log
+*.log
+
+# Appium cache / temp
+.appium/
+
+# =====================
+# Android / Emulator
+# =====================
+*.keystore
+*.jks
+.gradle/
+local.properties
+
+# =====================
+# Cypress (se ainda usar no TCC)
+# =====================
 cypress/videos/
 cypress/screenshots/
 
+# =====================
+# Docs (opcional)
+# =====================
 docs/
 
-# Logs
-npm-debug.log*
-yarn-debug.log*
+# =====================
+# Environment variables
+# =====================
+.env
 
+# =====================
 # OS files
+# =====================
 .DS_Store
 Thumbs.db
 
-# Env files
-.env
+# =====================
+# IDE / Editor
+# =====================
+.vscode/
+.idea/
