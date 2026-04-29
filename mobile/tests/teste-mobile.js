@@ -19,7 +19,7 @@ const { remote } = require('webdriverio');
     },
   });
 
-  console.log('👉 App iniciado');
+  console.log('!!!! App iniciado');
 
   await driver.pause(15000);
 
